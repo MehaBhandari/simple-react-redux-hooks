@@ -13,7 +13,8 @@ function App(props) {
 
     return (
         <>
-            {props.employees && (props.employees.map((emp)=>{
+            {props.employees && (
+                props.employees.map((emp)=>{
                 return(
                     <div key={emp.id}>
                         <img src={emp.avatar} alt={emp.name} />
