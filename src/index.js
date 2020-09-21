@@ -1,4 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import {rootReducer} from 'rootReducer';
 
-ReactDOM.render(<h1>Hi there...</h1>, document.getElementById('root'))
+var appStore = createStore(rootReducer);
+
+ReactDOM.render((<Provider store={appStore}></Provider>), document.getElementById('root'))
