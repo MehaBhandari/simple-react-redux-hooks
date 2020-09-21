@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import ReactDOM from 'react-dom';
 
 import {connect} from 'react-redux';
 import * as actions from '../action';
@@ -10,7 +9,7 @@ function App(props) {
         Axios.get('http://5c055de56b84ee00137d25a0.mockapi.io/api/v1/employees').then((resp)=>{
             props.setEmployeeList(resp.data);
         })
-    },[])
+    }, [])
 
     return (
         <>
@@ -27,3 +26,11 @@ function App(props) {
         </>
     )
 }
+
+function mapStateToPropsForEmployees(state) {
+    return {
+        employees: state.employees
+    }
+}
+
+export var AppComponent = connect(mapStateToPropsForEmployees, actions)(App);
