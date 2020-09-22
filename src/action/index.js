@@ -4,3 +4,10 @@ export function setEmployeeList(employeeList) {
         payload: employeeList
     }
 }
+export function deleteEmployee(employeeId) {
+    debugger;
+    return {
+        type: 'DELETE_EMPLOYEE',
+        payload: employeeId
+    }
+}

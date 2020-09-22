@@ -21,6 +21,7 @@ function App(props) {
                         <h1>User Name: {emp.name}</h1>
                         <h2>User created on {new Date(emp.createdAt).toString()}</h2>
                         <h3>Employee Id: {emp.id}</h3>
+                        <input type='button' value='Delete' onClick = {()=>{props.deleteEmployee(emp.id)}}/> <br/><br/>
                     </div>
                 )
             }))}
